@@ -5,39 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart ToDo List</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>TODO LIST</h1>
-        <ol>
-            <li>
-                <input type="checkbox">
-                <span>Go to a shop</span>
-                <input type="button" value="Edit">
-                <input type="button" value="Delete">
-            </li>
-            <li>
-                <input type="checkbox">
-                <span>Buy a bread</span>
-                <input type="button" value="Edit">
-                <input type="button" value="Delete">
-            </li>
-            <li>
-                <input type="checkbox">
-                <span>Wash the dishes</span>
-                <input type="button" value="Edit">
-                <input type="button" value="Delete">
-            </li>
-        </ol>
-    <form>
-        <input type="text" placeholder="Enter task">
-        <button type="submit">Add task</button> 
-    </form>
-    <section>
-        <p>Tasks remaning: $count</p>
-        <button type="button">All tasks</button>
-        <button type="button">Active</button>
-        <button type="button">Finish</button>
-    </section>
+    <div class="container">
+        <h1>TODO LIST</h1>
+            <ol>
+                <li>
+                    <input type="checkbox" id="task1">
+                    <label for ="task1">Go to a shop</label>
+                    <input type="button" value="Edit">
+                    <input type="button" value="Delete">
+                </li>
+                <li>
+                    <input type="checkbox" id="task2">
+                    <label for ="task2">Buy a bread</label>
+                    <input type="button" value="Edit">
+                    <input type="button" value="Delete">
+                </li>
+                <li>
+                    <input type="checkbox" id="task3">
+                    <label for ="task3">Wash the dishes</label>
+                    <input id="edit-task" type="button" value="Edit">
+                    <input id="delete-task" type="button" value="Delete">
+                </li>
+            </ol>
+        <form>
+            <input type="text" id="add-new-task" placeholder="Enter task">
+            <button type="submit">Add task</button> 
+        </form>
+        <section>
+            <p>Tasks remaning: $count</p>
+            <button id="show-all-tasks" type="button">All tasks</button>
+            <button id="show-active-tasks" type="button">Active</button>
+            <button id="show-finished-tasks" type="button">Finished</button>
+        </section>
+    </div>
+    
 
 
     <script src="app.js"></script>
