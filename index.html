@@ -10,36 +10,50 @@
 <body>
     <div class="container">
         <h1>TODO LIST</h1>
-            <ol>
-                <li>
+        <div class="filters">
+            <div class="search-container">
+                <input type="text" id="search" class="search-input" placeholder="Search note">
+                <input type="button" class="search-btn" value="🔍">
+            </div>
+            <select id="filter-select">
+                <option value="all">ALL</option>
+                <option value="active">ACTIVE</option>
+                <option value="finished">FINISHED</option>
+            </select>
+            <button id="theme" type="button" data-theme="light">🌙</button>
+        </div>
+        
+            <ul class="tasks-list">
+                <li class="task-item">
                     <input type="checkbox" id="task1">
                     <label for ="task1">Go to a shop</label>
-                    <input type="button" value="Edit">
-                    <input type="button" value="Delete">
+                    <input type="button" value="✏️">
+                    <input type="button" value="🗑️">
                 </li>
-                <li>
+                <li class="task-item">
                     <input type="checkbox" id="task2">
                     <label for ="task2">Buy a bread</label>
-                    <input type="button" value="Edit">
-                    <input type="button" value="Delete">
+                    <input type="button" value="✏️">
+                    <input type="button" value="🗑️">
                 </li>
-                <li>
+                <li class="task-item">
                     <input type="checkbox" id="task3">
                     <label for ="task3">Wash the dishes</label>
-                    <input id="edit-task" type="button" value="Edit">
-                    <input id="delete-task" type="button" value="Delete">
+                    <input id="edit-task" type="button" value="✏️">
+                    <input id="delete-task" type="button" value="🗑️">
                 </li>
-            </ol>
-        <form>
-            <input type="text" id="add-new-task" placeholder="Enter task">
-            <button type="submit">Add task</button> 
+            </ul>
+        <div class="add">
+            <button type="submit">➕</button> 
+        </div>
+        <form class="addTask" hidden>
+            <h1>NEW NOTE</h1>
+            <input type="text" placeholder="Input your note">
+            <div class="form-actions">
+                <button type="button">CANCEL</button>
+                <button type="submit">APPLY</button>
+            </div>
         </form>
-        <section>
-            <p>Tasks remaning: 3 count</p>
-            <button id="show-all-tasks" type="button">All tasks</button>
-            <button id="show-active-tasks" type="button">Active</button>
-            <button id="show-finished-tasks" type="button">Finished</button>
-        </section>
     </div>
     
 
