@@ -5,31 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart ToDo List</title>
     <link rel="stylesheet" href="style.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>TODO LIST</h1>
+        <div class="header">TODO LIST</div>
         <div class="filters">
-            <div class="search-container">
-                <input type="text" id="search" class="search-input" placeholder="Search note">
-                <input type="button" class="search-btn" value="🔍">
+            <div class="menu">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search note...">
+                    <button class="search-btn">
+                        <img src="search.svg" alt="Search" class="icon">
+                    </button>
+                </div>
+                <select id="filter-select">
+                    <option value="all">ALL</option>
+                    <option value="active">ACTIVE</option>
+                    <option value="finished">FINISHED</option>
+                </select>
+                <button id="theme" type="button" data-theme="light">🌙</button>
             </div>
-            <select id="filter-select">
-                <option value="all">ALL</option>
-                <option value="active">ACTIVE</option>
-                <option value="finished">FINISHED</option>
-            </select>
-            <button id="theme" type="button" data-theme="light">🌙</button>
+
+            
         </div>
         
             <ul class="tasks-list">
                 <li class="task-item">
                     <input type="checkbox" id="task1">
-                    <label for ="task1">Go to a shop</label>
+                    <label for ="task1">Доделать графики СП</label>
                     <input type="button" value="✏️">
                     <input type="button" value="🗑️">
                 </li>
+                <li class="task-item">
+                    <input type="checkbox" id="task1">
+                    <label for ="task1">Обновить изменялку</label>
+                    <input type="button" value="✏️">
+                    <input type="button" value="🗑️">
+                </li>
+                <li class="task-item">
+                    <input type="checkbox" id="task1">
+                    <label for ="task1">Проверить все графики и октябрь начать</label>
+                    <input type="button" value="✏️">
+                    <input type="button" value="🗑️">
+                </li>
+                <li class="task-item">
+                    <input type="checkbox" id="task1">
+                    <label for ="task1">Начать делать листики</label>
+                    <input type="button" value="✏️">
+                    <input type="button" value="🗑️">
+                </li>
+                <li class="task-item">
+                    <input type="checkbox" id="task1">
+                    <label for ="task1">Прочитать 2(желательно 3 урока)</label>
+                    <input type="button" value="✏️">
+                    <input type="button" value="🗑️">
+                </li>
+                <li class="task-item">
+                    <input type="checkbox" id="task1">
+                    <label for ="task1">Немного начать стилизацию</label>
+                    <input type="button" value="✏️">
+                    <input type="button" value="🗑️">
+                </li>
+
+
+
                 <li class="task-item">
                     <input type="checkbox" id="task2">
                     <label for ="task2">Buy a bread</label>

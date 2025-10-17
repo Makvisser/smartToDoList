@@ -4,14 +4,10 @@
     --text-color: #252525;
 }
 
-
-h1 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
 body {
     background-color: var(--background-color);
-
+    font-family: 'Kanit', 'Rubik', sans-serif;
+    font-weight: 500; /* Medium */
     padding: 20px;
 }
 
@@ -21,14 +17,62 @@ ol {
     margin: 20px 0;
 }
 
-.container{
-    display: flex; 
-    justify-content: center;
-    width: 100%;
+.container {
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
+    width: 750px;
+    height: 710px;
+    margin: 0 auto;
 }
 
-button{
-    background-color: var(--button-color);
+.header{
+    font-size: 26px;
+    padding-top: 40px;
+    padding-bottom: 18px;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 595px;
+    height: 38px;
+    border: 1px solid;
+    border-color: var(--button-color);
+    background-color: var(--background-color);
+    border-radius: 5px;
+    padding: 16 8px;
+}
+
+.search-input{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    flex-grow: 1;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    outline: none;
+    color: #C3C1E5;
+}
+
+.search-input::placeholder{
+    color: #C3C1E5;
+}
+
+.seacrh-btn{
+    background-color: transparent;
+    border: none;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
 }
