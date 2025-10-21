@@ -9,6 +9,7 @@ body {
     font-family: 'Kanit', 'Rubik', sans-serif;
     font-weight: 500; /* Medium */
     padding: 20px;
+    box-sizing: border-box;
 }
 
 ol {
@@ -31,20 +32,24 @@ ol {
     padding-top: 40px;
     padding-bottom: 18px;
 }
-
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 38px;
+    width: 750px;
+}
 .search-container{
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 595px;
-    height: 38px;
+    width: 550px;
     border: 1px solid;
     border-color: var(--button-color);
     background-color: var(--background-color);
     border-radius: 5px;
-    padding: 16 8px;
 }
-
+                                                                                      
 .search-input{
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -54,17 +59,18 @@ ol {
     font-size: 16px;
     outline: none;
     color: #C3C1E5;
+    padding: 16px 8px;
 }
-
+            
 .search-input::placeholder{
     color: #C3C1E5;
 }
-
-.seacrh-btn{
+.search-btn{
     background-color: transparent;
     border: none;
+    padding-right: 16px;
 }
-
+        
 .icon {
     width: 20px;
     height: 20px;
@@ -75,4 +81,88 @@ ol {
     border: none;
     cursor: pointer;
     padding: 5px;
+}
+
+.filter-select{
+    width: 130px;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+    color: var(--background-color);
+    font-family: 'Kanit', 'Rubik', sans-serif;
+    font-weight: 500; /* Medium */
+    font-size: 18px;
+}
+                                                
+.theme{
+    width: 38px;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+    color: var(--background-color);
+}
+            
+.tasks{
+    display:flex;
+    justify-content: center;
+    padding-top: 30px;
+    width: 520px;
+    height: 545px;
+}
+        
+.tasks-list{
+    list-style: none;
+    width: 100%;
+}
+
+.task-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 26px;
+    padding: 17px 0;
+}
+                                            
+.task-item:not(:last-child) {
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.task-content{
+    display:flex;
+    align-items: center;
+    gap: 17px;
+    flex: 1;
+    min-width: 0;
+}
+    
+.task-item label {
+    text-transform: uppercase; 
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 2px;
+    background-color: transparent;
+    border: 1px solid var(--button-color);
+    position: relative;
+}
+    
+input[type="checkbox"]:checked{
+    background-color: var(--button-color);
+}
+        
+input[type="checkbox"]:checked::before{
+    content: "";
+    background-image: url("/check-mark.svg");
+    color: var(--background-color);
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
