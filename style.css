@@ -166,3 +166,15 @@ input[type="checkbox"]:checked::before{
     top: 0;
     left: 0;
 }
+
+.actions-btn{
+    border: none;
+    background-color: transparent;
+    padding-left: 10px;
+}
+
+.actions-icon{
+    width: 13px;
+    height: 13px;
+
+}
