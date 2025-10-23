@@ -17,7 +17,7 @@
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="Search note...">
                 <button class="search-btn">
-                    <img src="search.svg" alt="Search" class="icon">
+                    <img src="/icons/search.svg" alt="Search" class="icon">
                 </button>
             </div>
 
@@ -28,7 +28,7 @@
             </select>
 
             <button class="theme" type="button" data-theme="light">
-                <img src="dark-theme.svg" alt="Theme" class="icon">
+                <img src="/icons/dark-theme.svg" alt="Theme" class="icon">
             </button>
         </div>
         
@@ -40,15 +40,15 @@
             <template id="task-template">
                 <li class="task-item">
                     <div class="task-content">
-                        <input type="checkbox" class="task-checkbox">
-                        <label class="task-text"></label>
+                        <input type="checkbox" class="task-checkbox" id="task">
+                        <label for="task" class="task-text"></label>
                     </div>
                     <div class="task-actions">
                         <button class="actions-btn edit" type="button">
-                            <img src="edit.svg" alt="edit" class="actions-icon">
+                            <img src="/icons/edit.svg" alt="edit" class="actions-icon">
                         </button>
                         <button class="actions-btn delete" type="button">
-                            <img src="delete.svg" alt="delete" class="actions-icon">
+                            <img src="/icons/delete.svg" alt="delete" class="actions-icon">
                         </button>
                     </div>
                 </li>
@@ -56,8 +56,11 @@
         </div>
 
         <div class="add">
-            <button type="submit">➕</button> 
+            <button type="button" class="add-btn">
+                <img src="/icons/add-button.svg" alt="add" class="add-icon">
+            </button> 
         </div>
+
         <form class="addTask" hidden>
             <h1>NEW NOTE</h1>
             <input type="text" placeholder="Input your note">

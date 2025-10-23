@@ -113,6 +113,8 @@ ol {
 .tasks-list{
     list-style: none;
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .task-item{
@@ -122,7 +124,11 @@ ol {
     height: 26px;
     padding: 17px 0;
 }
-                                            
+
+.task-item:first-child{
+    padding-top: 0;
+}
+
 .task-item:not(:last-child) {
     border-bottom: 1px solid #E0E0E0;
 }
@@ -155,7 +161,7 @@ input[type="checkbox"]:checked{
         
 input[type="checkbox"]:checked::before{
     content: "";
-    background-image: url("/check-mark.svg");
+    background-image: url("/icons/check-mark.svg");
     color: var(--background-color);
     background-size: 14px 14px;
     background-repeat: no-repeat;
@@ -166,6 +172,17 @@ input[type="checkbox"]:checked::before{
     top: 0;
     left: 0;
 }
+.task-checkbox:checked + .task-text{
+    text-decoration: line-through;
+    color: #252525;
+    opacity: 50%
+}
+
+.actions-icon{
+    width: 18px;
+    height: 18px;
+
+}
 
 .actions-btn{
     border: none;
@@ -173,8 +190,9 @@ input[type="checkbox"]:checked::before{
     padding-left: 10px;
 }
 
-.actions-icon{
-    width: 13px;
-    height: 13px;
-
+.add-btn{
+    border: none;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
 }

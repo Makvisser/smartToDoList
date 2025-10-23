@@ -30,3 +30,11 @@ function renderTasks() {
 
 // Запускаем при загрузке страницы
 document.addEventListener('DOMContentLoaded', renderTasks);
+
+
+const addBtn = document.querySelector('.add-btn');
+const addTaskForm = document.querySelector('.addTask');
+
+addBtn.addEventListener('click', function(){
+    addTaskForm.hidden = false;
+});
