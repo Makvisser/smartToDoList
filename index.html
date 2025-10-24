@@ -32,34 +32,37 @@
             </button>
         </div>
         
-        <div class="tasks">
-            <ul class="tasks-list">
+        <div class="tasks-wrapper">
+            
+            <div class="tasks">
+                <ul class="tasks-list"></ul>
 
-            </ul>
+                <template id="task-template">
+                    <li class="task-item">
+                        <div class="task-content">
+                            <input type="checkbox" class="task-checkbox" id="task">
+                            <label for="task" class="task-text"></label>
+                        </div>
+                        <div class="task-actions">
+                            <button class="actions-btn edit" type="button">
+                                <img src="/icons/edit.svg" alt="edit" class="actions-icon">
+                            </button>
+                            <button class="actions-btn delete" type="button">
+                                <img src="/icons/delete.svg" alt="delete" class="actions-icon">
+                            </button>
+                        </div>
+                    </li>
+                </template>
+            </div>
 
-            <template id="task-template">
-                <li class="task-item">
-                    <div class="task-content">
-                        <input type="checkbox" class="task-checkbox" id="task">
-                        <label for="task" class="task-text"></label>
-                    </div>
-                    <div class="task-actions">
-                        <button class="actions-btn edit" type="button">
-                            <img src="/icons/edit.svg" alt="edit" class="actions-icon">
-                        </button>
-                        <button class="actions-btn delete" type="button">
-                            <img src="/icons/delete.svg" alt="delete" class="actions-icon">
-                        </button>
-                    </div>
-                </li>
-            </template>
+            <div class="add">
+                <button type="button" class="add-btn">
+                    <img src="/icons/add-button.svg" alt="add" class="add-icon">
+                </button> 
+            </div>
         </div>
 
-        <div class="add">
-            <button type="button" class="add-btn">
-                <img src="/icons/add-button.svg" alt="add" class="add-icon">
-            </button> 
-        </div>
+
 
         <form class="addTask" hidden>
             <h1>NEW NOTE</h1>

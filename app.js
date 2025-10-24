@@ -5,7 +5,14 @@ const tasks = [
     {id: 4, text: "to do commit", completed: false},
     {id: 5, text: "add to function edit", completed: false},
     {id: 6, text: "add to function delete", completed: false},
-    {id: 7, text: "add to filter", completed: false}
+    {id: 7, text: "add to filter", completed: false},
+    {id: 8, text: "Доделать стилизацию", completed: false},
+    {id: 9, text: "сделать стилизацию формы добавлени", completed: false},
+    {id: 10, text: "Add to function add", completed: false},
+    {id: 11, text: "to do commit", completed: false},
+    {id: 12, text: "add to function edit", completed: false},
+    {id: 13, text: "add to function delete", completed: false},
+    {id: 14, text: "add to filter", completed: false}
 ]
 
 function renderTasks() {
