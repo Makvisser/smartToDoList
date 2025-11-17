@@ -1,4 +1,4 @@
-:root{
+:root {
     --background-color: #F7F7F7;
     --button-color: #6C63FF;
     --text-color: #252525;
@@ -7,7 +7,8 @@
 body {
     background-color: var(--background-color);
     font-family: 'Kanit', 'Rubik', sans-serif;
-    font-weight: 500; /* Medium */
+    font-weight: 500;
+    /* Medium */
     padding: 20px;
     box-sizing: border-box;
 }
@@ -21,20 +22,21 @@ ol {
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     width: 750px;
     margin: 0 auto;
 }
 
-.header{
+.header {
     position: sticky;
     top: 40px;
     background-color: var(--background-color);
     font-size: 26px;
     height: 39px;
+    z-index: 100;
 }
 
-.menu{
+.menu {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -43,9 +45,10 @@ ol {
     background-color: var(--background-color);
     height: 38px;
     width: 750px;
+    z-index: 100;
 }
 
-.search-container{
+.search-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -55,8 +58,8 @@ ol {
     background-color: var(--background-color);
     border-radius: 5px;
 }
-                                                                                      
-.search-input{
+
+.search-input {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     flex-grow: 1;
@@ -68,16 +71,17 @@ ol {
     padding-left: 16px;
     height: 38px;
 }
-            
-.search-input::placeholder{
+
+.search-input::placeholder {
     color: #C3C1E5;
 }
-.search-btn{
+
+.search-btn {
     background-color: transparent;
     border: none;
     padding-right: 16px;
 }
-        
+
 .icon {
     width: 20px;
     height: 20px;
@@ -90,18 +94,19 @@ ol {
     padding: 5px;
 }
 
-.filter-select{
+.filter-select {
     width: 130px;
     border-radius: 5px;
     background-color: var(--button-color);
     border-color: var(--button-color);
     color: var(--background-color);
     font-family: 'Kanit', 'Rubik', sans-serif;
-    font-weight: 500; /* Medium */
+    font-weight: 500;
+    /* Medium */
     font-size: 18px;
 }
-                                                
-.theme{
+
+.theme {
     width: 38px;
     border-radius: 5px;
     background-color: var(--button-color);
@@ -109,32 +114,31 @@ ol {
     color: var(--background-color);
 }
 
-.tasks-wrapper{
+.tasks-wrapper {
     width: 750px;
     position: relative;
     display: flex;
     justify-content: center;
 }
 
-
-
-.tasks{
-    display:flex;
+.tasks {
+    display: flex;
     justify-content: center;
     padding-top: 30px;
     width: 520px;
     min-height: 545px;
     margin-top: 30px;
+    position: relative;
 }
-        
-.tasks-list{
+
+.tasks-list {
     list-style: none;
     width: 100%;
     padding: 0;
     margin: 0;
 }
 
-.task-item{
+.task-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -143,7 +147,7 @@ ol {
     transition: opacity 0.3s ease;
 }
 
-.task-item:first-child{
+.task-item:first-child {
     padding-top: 0;
 }
 
@@ -151,19 +155,19 @@ ol {
     border-bottom: 1px solid #E0E0E0;
 }
 
-.task-content{
-    display:flex;
+.task-content {
+    display: flex;
     align-items: center;
     gap: 17px;
     flex: 1;
     min-width: 0;
 }
-    
+
 .task-item label {
-    text-transform: uppercase; 
+    text-transform: uppercase;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     appearance: none;
     width: 26px;
     height: 26px;
@@ -172,12 +176,12 @@ input[type="checkbox"]{
     border: 1px solid var(--button-color);
     position: relative;
 }
-    
-input[type="checkbox"]:checked{
+
+input[type="checkbox"]:checked {
     background-color: var(--button-color);
 }
-        
-input[type="checkbox"]:checked::before{
+
+input[type="checkbox"]:checked::before {
     content: "";
     background-image: url("/icons/check-mark.svg");
     color: var(--background-color);
@@ -190,32 +194,33 @@ input[type="checkbox"]:checked::before{
     top: 0;
     left: 0;
 }
-.task-checkbox:checked + .task-text{
+
+.task-checkbox:checked+.task-text {
     text-decoration: line-through;
     color: #252525;
     opacity: 50%
 }
 
-.actions-icon{
+.actions-icon {
     width: 18px;
     height: 18px;
 
 }
 
-.actions-btn{
+.actions-btn {
     border: none;
     background-color: transparent;
     padding-left: 10px;
 }
 
-.add{
+.add {
     position: fixed;
-    top: 493px;
-    left: 692px;
+    top: 793px;
+    left: 1242px;
     z-index: 100;
 }
 
-.add-btn{
+.add-btn {
     border: none;
     background-color: transparent;
     width: 50px;
@@ -223,3 +228,4 @@ input[type="checkbox"]:checked::before{
     padding-right: 8px;
     cursor: pointer;
 }
+
