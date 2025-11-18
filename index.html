@@ -12,25 +12,27 @@
 <body>
     <div class="container">
         
-        <div class="header">TODO LIST</div>
+        <div class="header-section">
+            <div class="header">TODO LIST</div>
 
-        <div class="menu">
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Search note...">
-                <button class="search-btn">
-                    <img src="/icons/search.svg" alt="Search" class="icon">
+            <div class="menu">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search note...">
+                    <button class="search-btn">
+                        <img src="/icons/search.svg" alt="Search" class="icon">
+                    </button>
+                </div>
+
+                <select class="filter-select">
+                    <option value="all">ALL</option>
+                    <option value="complete">COMPLETE</option>
+                    <option value="incomplete">INCOMPLETE</option>
+                </select>
+
+                <button class="theme" type="button" data-theme="light">
+                    <img src="/icons/dark-theme.svg" alt="Theme" class="icon">
                 </button>
             </div>
-
-            <select class="filter-select">
-                <option value="all">ALL</option>
-                <option value="complete">COMPLETE</option>
-                <option value="incomplete">INCOMPLETE</option>
-            </select>
-
-            <button class="theme" type="button" data-theme="light">
-                <img src="/icons/dark-theme.svg" alt="Theme" class="icon">
-            </button>
         </div>
         
         <div class="tasks-wrapper">
@@ -62,8 +64,6 @@
                 </button> 
             </div>
         </div>
-
-
 
         <form class="addTask" hidden>
             <h1>NEW NOTE</h1>

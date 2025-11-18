@@ -1,6 +1,6 @@
 const tasks = [
     {id: 1, text: "Доделать стилизацию", completed: false},
-    {id: 2, text: "сделать стилизацию формы добавлени", completed: false},
+    {id: 2, text: "сделать стилизацию формы добавления и еще немножко", completed: false},
     {id: 3, text: "Add to function add", completed: false},
     {id: 4, text: "to do commit", completed: false},
     {id: 5, text: "add to function edit", completed: false},

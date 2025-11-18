@@ -8,10 +8,10 @@ body {
     background-color: var(--background-color);
     font-family: 'Kanit', 'Rubik', sans-serif;
     font-weight: 500;
-    /* Medium */
-    padding: 20px;
     box-sizing: border-box;
-}
+    margin: 0;
+    padding: 0;
+} 
 
 ol {
     border-radius: 8px;
@@ -25,27 +25,39 @@ ol {
     align-items: center;
     width: 750px;
     margin: 0 auto;
+    position: relative;
+    
+}
+
+.header-section {
+    width: 750px;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    background-color: var(--background-color);
+    z-index: 100;
+    top: 0;
 }
 
 .header {
-    position: sticky;
     top: 40px;
-    background-color: var(--background-color);
     font-size: 26px;
     height: 39px;
-    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
 }
 
 .menu {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    position: sticky;
-    top: 97px;
-    background-color: var(--background-color);
     height: 38px;
     width: 750px;
-    z-index: 100;
+    margin-top: 18px;
+    margin-bottom: 40px;
 }
 
 .search-container {
@@ -102,7 +114,6 @@ ol {
     color: var(--background-color);
     font-family: 'Kanit', 'Rubik', sans-serif;
     font-weight: 500;
-    /* Medium */
     font-size: 18px;
 }
 
@@ -116,7 +127,6 @@ ol {
 
 .tasks-wrapper {
     width: 750px;
-    position: relative;
     display: flex;
     justify-content: center;
 }
@@ -124,10 +134,8 @@ ol {
 .tasks {
     display: flex;
     justify-content: center;
-    padding-top: 30px;
+    /*padding-top: 30px;*/
     width: 520px;
-    min-height: 545px;
-    margin-top: 30px;
     position: relative;
 }
 
@@ -204,7 +212,6 @@ input[type="checkbox"]:checked::before {
 .actions-icon {
     width: 18px;
     height: 18px;
-
 }
 
 .actions-btn {
@@ -215,8 +222,8 @@ input[type="checkbox"]:checked::before {
 
 .add {
     position: fixed;
-    top: 793px;
-    left: 1242px;
+    bottom: 32px;
+    right: 333px;
     z-index: 100;
 }
 
@@ -229,3 +236,6 @@ input[type="checkbox"]:checked::before {
     cursor: pointer;
 }
 
+.addTask {
+    hidden: true;
+}
