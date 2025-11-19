@@ -11,7 +11,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-} 
+}
 
 ol {
     border-radius: 8px;
@@ -26,7 +26,7 @@ ol {
     width: 750px;
     margin: 0 auto;
     position: relative;
-    
+
 }
 
 .header-section {
@@ -237,5 +237,104 @@ input[type="checkbox"]:checked::before {
 }
 
 .addTask {
-    hidden: true;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 289px;
+    width: 500px;
+    background: var(--background-color);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    box-sizing: border-box;
+    visibility: hidden;
+    padding: 18px 30px 18px 30px;
+}
+
+.addTask:not([hidden]) {
+    visibility: visible;
+}
+
+.addTask[hidden] {
+    visibility: hidden;
+}
+
+.addTask-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.title {
+    font-size: 24px;
+    font-family: 'Kanit', 'Rubik', sans-serif;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.add-input {
+    width: 100%;
+    height: 38px;
+    border: 1px solid var(--button-color);
+    background-color: var(--background-color);
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    outline: none;
+    color: var(--text-color);
+    background-color: transparent;
+    font-size: 16px;
+    outline: none;
+    color: #C3C1E5;
+    padding: 0 16px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    display: block;
+
+}
+
+.add-input::placeholder {
+    color: #C3C1E5;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    align-items: center;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Kanit', 'Rubik', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-actions button[type="button"] {
+    width: 110px;
+    height: 38px;
+    background: transparent;
+    color: var(--button-color);
+    border: 1px solid var(--button-color);
+}
+
+.form-actions button[type="submit"] {
+    width: 97px;
+    height: 38px;
+    background: var(--button-color);
+    color: var(--background-color);
 }
