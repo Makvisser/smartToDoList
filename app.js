@@ -1,24 +1,35 @@
-const tasks = [
-    { id: 1, text: "Доделать стилизацию", completed: false },
-    { id: 2, text: "сделать стилизацию формы добавления и еще немножко", completed: false },
-    { id: 3, text: "Add to function add", completed: true },
-    { id: 4, text: "to do commit", completed: true },
-    { id: 5, text: "add to function edit", completed: true },
-    { id: 6, text: "add to function delete", completed: true },
-    { id: 7, text: "add to filter", completed: true },
-    { id: 8, text: "Доделать стилизацию", completed: false },
-    { id: 9, text: "сделать стилизацию формы добавлени", completed: false },
-    { id: 10, text: "Add to function add", completed: true },
-    { id: 11, text: "to do commit", completed: true },
-    { id: 12, text: "add to function edit", completed: true },
-    { id: 13, text: "add to function delete", completed: true },
-    { id: 14, text: "add to filter", completed: true },
-    { id: 15, text: "Add to function add", completed: true },
-    { id: 16, text: "to do commit", completed: true },
-    { id: 17, text: "add to function edit", completed: true },
-    { id: 18, text: "add to function delete", completed: true },
-    { id: 19, text: "add to filter", completed: true }
-]
+  const firebaseConfig = {
+    apiKey: "AIzaSyCCwXT0H6y5R_DLyX5Ra1ak6Yhlwb5xuKE",
+    authDomain: "todo-list-88530.firebaseapp.com",
+    projectId: "todo-list-88530",
+    storageBucket: "todo-list-88530.firebasestorage.app",
+    messagingSenderId: "820286679484",
+    appId: "1:820286679484:web:cca7d8a276519b0edf23b9",
+    measurementId: "G-6ZP6302WC2"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+  // Initialize Firestore
+  const db = firebase.firestore();
+  
+  console.log('Firebase initialized!', db);
+
+let tasks = [];
+
+async function loadTasksFromFirestore(){
+    try{
+        const snapshot = await db.collection('tasks').get();
+        tasks = snapshot.docs.map(doc => ({
+            id: doc.id,
+            ...doc.data()
+        }));
+        renderTasks();
+    }catch(error){
+        console.log('Error loading tasks:', error);
+    }
+}
 
 function renderTasks(taskToRender = tasks) {
     if (!Array.isArray(taskToRender)) {
@@ -45,18 +56,26 @@ function renderTasks(taskToRender = tasks) {
 }
 
 // Запускаем при загрузке страницы
-document.addEventListener('DOMContentLoaded', renderTasks);
+document.addEventListener('DOMContentLoaded', async function(){
+    await loadTasksFromFirestore();
+});
 
-function addNewTask(text) {
-    const newTask = {
-        id: Date.now(),
-        text: text,
-        completed: false
-    };
+async function addNewTask(text) {
+    try{
+        const newTask = {
+            text: text,
+            completed: false,
+            createAt: firebase.firestore.FieldValue.serverTimestamp()
+        };
+        const docRef = await db.collection('tasks').add(newTask);
+        console.log('Task added with ID:', docRef.id)
 
-    tasks.push(newTask);
-    renderTasks();
+        await loadTasksFromFirestore();
+    }catch(error){
+        console.error('Error adding task:', error);
+    }
 }
+
 const addBtn = document.querySelector('.add-btn');
 
 addBtn.addEventListener('click', function () {
