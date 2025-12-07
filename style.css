@@ -160,7 +160,7 @@ ol {
 }
 
 .task-item:not(:last-child) {
-    border-bottom: 1px solid #E0E0E0;
+    border-bottom: 1px solid var(--button-color);
 }
 
 .task-content {
@@ -233,7 +233,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .actions-btn.edit:hover .actions-icon{
-    filter: invert(25%) sepia(90%) saturate(5000%) hue-rotate(250deg);
+    filter: invert(27%) sepia(90%) saturate(5000%) hue-rotate(250deg);
 }
 
 .actions-btn.delete:hover .actions-icon{
@@ -395,4 +395,91 @@ input[type="checkbox"]:checked::before {
 .delete-confirm-delete{
     background: #ff4444;
     color: white;
+}
+
+.empty-state{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.empty-icon{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-text{
+    font-size: 18px;
+    color: #000000;
+    font-family: 'Kanit', 'Rubik', sans-serif;
+}
+
+body.dark-theme {
+    --background-color: #666666;
+    --text-color: #FFFFFF;
+    --button-color: #6C63FF;
+}
+
+body.dark-theme .search-input,
+body.darck-theme .add-input{
+    color: #FFFFFF;
+    background-color: transparent;
+}
+
+body.dark-theme .search-container,
+body.dark-theme .add-input{
+    border-color: #FFFFFF;
+}
+
+body.dark-theme .task-item:not(:last-child){
+    border-bottom: 1px solid #6C63FF;
+}
+
+body.dark-theme .task-checkbox:checked+.task-text{
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+body.dark-theme .empty-text{
+    color: #ffffff;
+}
+
+body.dark-theme .filter-select,
+body.dark-theme .theme{
+    background-color: #6C63FF;
+    border-color: #6C63FF;
+    color: #ffffff;
+}
+
+body.dark-theme .form-actions button[type="button"] {
+    background: transparent;
+    color: #FFFFFF; /* Белый текст */
+    border: 1px solid #FFFFFF; /* Белая рамка */
+}
+
+body.dark-theme .form-actions button[type="submit"] {
+    background: #6C63FF; /* Фиолетовая кнопка */
+    color: #FFFFFF; /* Белый текст */
+}
+
+body.dark-theme .addTask {
+    border: 1px solid #FFFFFF; /* Белая рамка для формы добавления */
+}
+
+body.dark-theme .delete-confirm {
+    border: 1px solid #FFFFFF; /* Белая рамка для подтверждения удаления */
+}
+
+body.dark-theme .delete-confirm-cancel {
+    color: #FFFFFF; /* Белый текст */
+    border: 1px solid #FFFFFF; /* Белая рамка */
+}
+
+body.dark-theme input[type="checkbox"] {
+    border: 1px solid #6C63FF; /* Фиолетовая рамка чекбокса */
 }

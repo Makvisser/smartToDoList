@@ -93,6 +93,10 @@ addBtn.addEventListener('click', function () {
     const backdrop = document.createElement('div');
     backdrop.className = 'addTask-backdrop';
     document.body.appendChild(backdrop);
+
+    setTimeout(() => {
+        taskInput.focus();
+    }, 100);
 });
 
 const addTaskForm = document.querySelector('.addTask');
@@ -133,7 +137,6 @@ const searchInput = document.querySelector('.search-input');
 
 searchInput.addEventListener('input', function (event) {
     const searchValue = event.target.value.toLowerCase();
-    console.log(searchValue);
 
     let foundItems;
 
@@ -144,13 +147,17 @@ searchInput.addEventListener('input', function (event) {
             item.text.toLowerCase().includes(searchValue));
     }
 
-    console.log(foundItems);
+    const emptyState = document.querySelector('.empty-state');
+    const tasksList = document.querySelector('.tasks-list');
 
-    if (Array.isArray(foundItems)) {
-        renderTasks(foundItems);
+    if (searchValue !== '' && foundItems.length === 0) {
+        emptyState.hidden = false;
+        tasksList.style.display = 'none';
+        renderTasks([]);
     } else {
-        console.error('foundItems is not an array:', foundItems);
-        renderTasks(tasks);
+        emptyState.hidden = true;
+        tasksList.style.display = 'block';
+        renderTasks(foundItems);
     }
 });
 
@@ -244,23 +251,23 @@ async function editTask(taskId) {
 
     const saveEdit = async () => {
         const newText = input.value.trim();
-        if (newText && newText !== currentText){
-            try{
+        if (newText && newText !== currentText) {
+            try {
                 await db.collection('tasks').doc(taskId).update({
                     text: newText
                 });
                 await loadTasksFromFirestore();
-            } catch(error){
+            } catch (error) {
                 console.log('Error updating task:', error);
             }
-        }else{
+        } else {
             input.remove();
             label.style.display = 'block';
         }
     };
 
     input.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter'){
+        if (e.key === 'Enter') {
             saveEdit();
         }
     });
@@ -283,11 +290,11 @@ async function updateTaskStatus(taskId, completed) {
         const filterSelect = document.querySelector('.filter-select');
         const filterValue = filterSelect.value;
 
-        if(filterValue !== "all"){
+        if (filterValue !== "all") {
             let filterItems;
-            if(filterValue === "complete"){
+            if (filterValue === "complete") {
                 filterItems = tasks.filter(item => item.completed === true);
-            } else if (filterValue === "incomplete"){
+            } else if (filterValue === "incomplete") {
                 filterItems = tasks.filter(item => item.completed === false);
             }
             renderTasks(filterItems);
@@ -297,3 +304,26 @@ async function updateTaskStatus(taskId, completed) {
         console.log('Error updating task status:', error);
     }
 }
+
+const themeBtn = document.querySelector('.theme');
+
+const savedTheme = localStorage.getItem('.theme') || 'light';
+if (savedTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    themeBtn.innerHTML = '<img src="/icons/light-theme.svg" alt="Light Theme" class="icon">';
+    themeBtn.setAttribute('data-theme', 'dark');
+}
+
+themeBtn.addEventListener('click', function () {
+    if (document.body.classList.contains('dark-theme')) {
+        document.body.classList.remove('dark-theme');
+        themeBtn.innerHTML = '<img src="/icons/dark-theme.svg" alt="Dark Theme" class="icon">';
+        themeBtn.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    } else {
+        document.body.classList.add('dark-theme');
+        themeBtn.innerHTML = '<img src="/icons/light-theme.svg" alt="Light Theme" class="icon">';
+        themeBtn.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+});
